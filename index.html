@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive PoliCoffee Website Landing Page</title>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/ac30677e3c.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- googlefont -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="home">
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="image/logo.png" class="logo" alt="logo"></a>
+            <!-- on crée le menu mobile avec le hamburger nommé (toggle)-->
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <!-- menu -->
+            <ul class="navMobile">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h1>PoliCoffee</h1>
+                <h2>It's not just coffee<br>It is also <span id="animtext">un sourire</span></h2>
+
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae, ea sequi doloremque earum omnis. Quas id voluptatem vero obcaecati deserunt officiis eius. Necessitatibus sequi illum maxime magni. Assumenda, quasi.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="imgBox">
+                <img src="image/img1.png" class="starbucks" alt="">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="image/thumb1.png" onclick="imgSlider('image/img1.png');changeCircleColor('#017143')" alt="">
+                <p>Frappuccino<br>Mint</p>
+            </li>
+            <li><img src="image/thumb2.png" onclick="imgSlider('image/img2.png');changeCircleColor('#eb7495')" alt="">
+                <p>Frappuccino<br>barbapapa</p>
+            </li>
+            <li><img src="image/thumb3.png" onclick="imgSlider('image/img3.png');changeCircleColor('#d752b1')" alt="">
+                <p>Frappuccino<br>strawberry</p>
+            </li>
+        </ul>
+        <ul class="sci">
+            <li>
+                <a href="#"><img src="image/twitter.png" alt="twitter"></a>
+            </li>
+            <li>
+                <a href="#"><img src="image/instagram.png" alt="instagram"></a>
+            </li>
+            <li>
+                <a href="#"><img src="image/facebook.png" alt="facebook"></a>
+            </li>
+        </ul>
+    </section>
+    <section class="about" id="about">
+        <div class="row">
+            <div class="col50">
+                <h2 class="titleText">About Us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla veritatis nostrum, voluptas eveniet, accusamus nisi quidem dolorum vel unde quos quibusdam error qui, illum amet atque id ab quasi aliquam?<br><br>Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Itaque eaque fugiat culpa laboriosam animi sed, suscipit repellat aliquid quia minima dolores quidem praesentium veritatis cupiditate et veniam, voluptatem eveniet vero?</p>
+            </div>
+            <div class="col50">
+                <div class="imgBx">
+                    <img src="image/img1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+    <script src="animtext.js"></script>
+
+</body>
+
+</html>

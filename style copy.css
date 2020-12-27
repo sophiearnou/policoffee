@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+
+/* -------------------menu----------- */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    position: relative;
+    max-width: 80px;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    color: #333333;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+
+/* -----content--------------- */
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    /* pour mettre à la ligne les 2div */
+    justify-content: space-between;
+    align-items: center;
+    /* pour center le tout sur la même ligne */
+}
+
+.content .textBox {
+    position: relative;
+    max-width: 600px;
+}
+
+.content .textBox h2 {
+    color: #333333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .textBox h2 span {
+    color: #017143;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.content .textBox p {
+    color: #333333;
+}
+
+.content .textBox a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #017143;
+    color: #ffffff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.content .imgBox {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.content .imgBox img {
+    max-width: 100%;
+}
+
+
+/* -------------thumb-------------- */
+
+.thumb {
+    position: absolute;
+    left: 52%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    /* pour centrer à l'interieur du thumb on 
+    dit gauche 50% et avec translateX on dit qu'on veut moins la moitié*/
+    display: flex;
+}
+
+.thumb li p {
+    color: #000;
+}
+
+.thumb li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+    color: #000;
+}
+
+.thumb li:hover {
+    transform: translateY(-15px);
+    /* il remonte de 15px */
+}
+
+.thumb li img {
+    min-width: 60px;
+}
+
+
+/* --------------social icon sci---------------- */
+
+.sci {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+    /*on transforme les dimensions et marges de 0.6*/
+    filter: invert(1);
+    /*on dit qu'on inverse la couleur ex c'est noir avec invert(1) c'est blanc*/
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #017143;
+    clip-path: circle(600px at right 800px);
+    /*on veut un cercle de 600px à droite et 800px à partir du haut, on peut aussi dire centrer ou à gauche*/
+}
+
+
+/* ---------------------MEDIA QUERY-------------------- */
+
+@media (max-width: 1024px) {
+    header {
+        /*on change le padding pour rapprocher des bords*/
+        padding: 20px;
+    }
+    header .logo {
+        /*on diminue la taille du logo*/
+        max-width: 80px;
+    }
+    header ul {
+        /*on cache le menu*/
+        display: none;
+    }
+    /* ------menu mobile position du hamburger--- */
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url(image/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 2;
+    }
+    /*la class active est crée avec la fonction toggleMenu
+    crée en js*/
+    .toggle.active {
+        position: fixed;
+        right: 20px;
+        background: url(image/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    header ul.navMobile.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        z-index: 1;
+    }
+    header ul li a {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    section {
+        /*on change le padding pourrapprocher des bords
+        comme le header*/
+        padding: 20px 20px 120px;
+    }
+    .content {
+        /*on change la direction
+        en colonne pour que le texte 
+        et la boisson soit l'un en doussous
+        de l'autre + un margin pour décaler*/
+        flex-direction: column;
+        margin-top: 100px;
+    }
+    .content .textBox h2 {
+        /*on change la taille de font*/
+        font-size: 3.5em;
+        margin-bottom: 15px;
+    }
+    .content .textBox {
+        /*on met la dimention du bloc à 100%*/
+        max-width: 100%;
+    }
+    .content .imgBox {
+        /* on donne la taille de 100% au contenu du bloc*/
+        max-width: 100%;
+        justify-content: center;
+    }
+    .content .imgBox img {
+        max-width: 100%;
+        margin-bottom: 150px;
+    }
+    .thumb li img {
+        /*on change la taille des petites img*/
+        min-width: 40px;
+    }
+    .thumb li p {
+        color: #fff;
+    }
+    .sci {
+        /*on crée un background sous les icones*/
+        background: #017143;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        right: 0;
+        width: 50px;
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        /*on change le padding pour rapprocher des bords*/
+        padding: 20px;
+    }
+    header .logo {
+        /*on diminue la taille du logo*/
+        max-width: 60px;
+    }
+    header ul {
+        /*on cache le menu*/
+        display: none;
+    }
+    /* ------menu mobile position du hamburger--- */
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url(image/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 2;
+    }
+    /*la class active est crée avec la fonction toggleMenu
+    crée en js*/
+    .toggle.active {
+        position: fixed;
+        right: 20px;
+        background: url(image/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    header ul.navMobile.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        z-index: 1;
+    }
+    header ul li a {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    section {
+        /*on change le padding pourrapprocher des bords
+        comme le header*/
+        padding: 20px 20px 120px;
+    }
+    .content {
+        /*on change la direction
+        en colonne pour que le texte 
+        et la boisson soit l'un en doussous
+        de l'autre + un margin pour décaler*/
+        flex-direction: column;
+        margin-top: 100px;
+    }
+    .content .textBox h2 {
+        /*on change la taille de font*/
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+    .content .textBox {
+        /*on met la dimention du bloc à 100%*/
+        max-width: 100%;
+    }
+    .content .imgBox {
+        /* on donne la taille de 100% au contenu du bloc*/
+        max-width: 280px;
+        justify-content: center;
+    }
+    .content .imgBox img {
+        max-width: 100%;
+        margin-bottom: 150px;
+    }
+    .thumb li img {
+        /*on change la taille des petites img*/
+        min-width: 40px;
+    }
+    .thumb li p {
+        color: #fff;
+    }
+    .circle {
+        /*on change la direction du cercle*/
+        clip-path: circle(600px at center bottom);
+    }
+    .sci {
+        /*on crée un background sous les icones*/
+        background: #017143;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        right: 0;
+        width: 50px;
+    }
+}
+
+
+/*supérieur ou égal*/
+
+@media (min-width: 768px) {
+    .content .imgBox img {
+        max-width: 150%;
+        margin-bottom: 150px;
+    }
+    .sci {
+        margin-top: 0px;
+    }
+    .circle {
+        clip-path: circle(560px at center bottom);
+    }
+    header .logo {
+        max-width: 80px;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+
+/*supérieur ou égal à 320 et inférieur ou égal à 767.98*/
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+    section {
+        padding: 20px 20px 60px;
+    }
+    .content {
+        max-width: 290px;
+    }
+    .content .textBox {
+        position: relative;
+    }
+    .content .imgBox {
+        padding-right: 0;
+    }
+    .content .imgBox img {
+        max-width: 100%;
+        margin-bottom: 70px;
+    }
+    .thumb {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 280px;
+    }
+    .thumb li {
+        margin: 0;
+    }
+    .thumb li img {
+        max-width: 30px;
+        margin: 0;
+    }
+    .thumb li p {
+        font-size: 12px;
+        text-align: center;
+        margin: 0 10px;
+    }
+    .sci {
+        margin-top: 90px;
+    }
+    .circle {
+        clip-path: circle(350px at center bottom);
+    }
+}
+
+
+/*supérieur ou égal*/
+
+@media (min-width: 1024px) {
+    .content .imgBox img {
+        max-width: 100%;
+        margin-bottom: 150px;
+    }
+    .sci {
+        margin-top: 0px;
+    }
+    .circle {
+        clip-path: circle(560px at center bottom);
+    }
+    header .logo {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .circle {
+        clip-path: circle(660px at center bottom);
+    }
+}
